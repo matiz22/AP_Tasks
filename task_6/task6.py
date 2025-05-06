@@ -1,7 +1,7 @@
 import cv2
 import os
 
-def filtruj_kontury_po_wielkosci(image_path, output_dir="kostki_filtrowane"):
+def filtruj_kontury_po_wielkosci(image_path):
     image = cv2.imread(image_path)
     if image is None:
         raise ValueError("Nie znaleziono obrazu pod podaną ścieżką.")

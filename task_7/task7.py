@@ -1,8 +1,7 @@
 import cv2
-import os
 import numpy as np
 
-def licz_kostki(image_path, output_dir="kostki_finalne"):
+def licz_kostki(image_path):
     image = cv2.imread(image_path)
     if image is None:
         raise ValueError("Nie znaleziono obrazu pod podaną ścieżką.")
@@ -28,7 +27,6 @@ def licz_kostki(image_path, output_dir="kostki_finalne"):
             cv2.putText(result, f"{w}x{h}", (x, y - 5), cv2.FONT_HERSHEY_SIMPLEX,
                         0.4, (0, 255, 0), 1, cv2.LINE_AA)
 
-            roi = resized[y:y + h, x:x + w]
             idx += 1
 
     if dimensions:
